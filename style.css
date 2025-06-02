@@ -1,0 +1,213 @@
+:root {
+  --primary: #1f60ff;
+  --dark:    #0d1117;
+  --light:   #f3f6ff;
+  --accent:  #ff4930;
+  --max-width: 1200px;
+}
+
+/* ── Global Reset ───────────────────── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Sticky‑footer Flex Layout ───────── */
+html, body { height: 100%; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  color: var(--light);
+  background: var(--dark);
+
+  /* NEW: turn the page into a vertical flex stack */
+  display: flex;
+  flex-direction: column;
+}
+
+main {                       
+  flex: 1 0 auto;
+   width: 100%;
+  max-width: var(--max-width);
+  margin: .5rem auto .5rem;
+  padding: 0 1rem;
+}
+
+footer {                   
+  flex-shrink: 0;
+}
+
+/* ─── Header ─────────────────────────── */
+header {
+  background: linear-gradient(135deg, #041734, #102863 60%, #143c9d);
+  padding: 0.5rem 0.5rem 0.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: .05em;
+}
+
+header h2 {
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(1.4rem, 3.2vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: .02em;
+  margin-top: 0.75rem;
+  color: var(--light);
+}
+
+header p {
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  opacity: .85;
+}
+
+/* ── NAV BAR ────────────────────────────────────────────────────────── */
+nav {
+  background: linear-gradient(135deg, var(--dark-bg), var(--dark-mid) 60%, var(--dark-light));
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav > div:first-child {
+  /* title + subtitle container */
+  display: flex;
+  flex-direction: column;
+  color: var(--light);
+}
+
+nav > div:first-child h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: .05em;
+  margin: 0;
+}
+
+nav > div:first-child h3 {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .02em;
+  margin: 0;
+  opacity: .85;
+}
+
+nav > div:last-child {
+  /* links container */
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--light);
+  font-weight: 700;
+  transition: color .2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ─── Content ‑ Cards & Sections ────── */
+section { margin-top: 2rem; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem; 
+}
+
+.card {
+  background: #131a25;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+  transition: transform .25s ease;
+}
+
+.card:hover   { transform: translateY(-4px); }
+.card h3      { font-size: 1.25rem; margin-bottom: .5rem; color: var(--primary); }
+.card p       { font-size: .95rem; opacity: .88; }
+
+/* Material Icons */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+/* ─── Signup ─────────────────────────── */
+#signup { text-align: center; }
+
+#signup h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+#signup form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin-top: 1.25rem;
+}
+
+#signup input,
+#signup button {
+  padding: .75rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1rem;
+}
+
+#signup input {
+  flex: 1 1 280px;
+  max-width: 380px;
+}
+
+#signup button {
+  background: var(--accent);
+  color: var(--light);
+  cursor: pointer;
+  font-weight: 700;
+  transition: background .2s ease;
+}
+
+#signup button:hover { background: #ff2d0f; }
+
+.galaxy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#galaxy {
+    border:2px solid #334;
+    border-radius:8px;
+    display:block;
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); iOS / Chrome */
+    /* -webkit-touch-callout: none;                iOS save‑image menu */
+    /* user-select: none;                          no accidental selection */
+    /* touch-action: none;                         stop double‑tap / glow */
+    /* outline: none;                              no focus ring */
+ }
+
+
+/* ─── Footer ─────────────────────────── */
+footer {
+  background: #0b0e15;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: .875rem;
+  opacity: .7;
+}
+
+a.brand {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
